@@ -1,66 +1,38 @@
-from fonctions import *
-from listeCartes import *
-
+import fonctions as fc
+import random
+from fonctions import joueurs
 condFinPartie = False
 
-'''Boucle de Partie'''
-while not condFinPartie:
-
-    random.shuffle(pioche)
-
-    for i in range(4):
-        piocher(1)
-        piocher(2)
-        piocher(3)
-
-    defausse.append(Carte(pioche[0].valeur, pioche[0].nom))
-    del pioche[0]
-
-    voirMain(1)
-
-    voirHautDefausse()
-
+while not condFinPartie: #Boucle de Partie
+    random.shuffle(fc.pioche)
+    fc.initpioche()
+    fc.voirmain(0)
+    fc.voirhautdefausse()
     finManche = False
     dernierTourJ1 = False
     dernierTourJ2 = False
     dernierTourJ3 = False
-
-    '''Boucle de Manche'''
-    while not finManche:
-
+    while not finManche: #boucle de manche
         if dernierTourJ1 is True:
             finManche = True
             break
-
-        piocheVide()
-
-        choixJoueur()
-
-        if choixJoueur == "D" or choixJoueur == "d":
-
-            J1Defausser()
-
-        if choixJoueur == "P" or choixJoueur == "p":
-
-            cartePiochee()
-
-            choixPJ1 = input("Voulez-vous l'échanger (E) ou la défausser (D) ? : ")
-
-            if choixPJ1 == "E" or choixPJ1 == "e":
-                J1PiocherEchanger()
-            elif choixPJ1 == "D" or choixPJ1 == "d":
-                defausser(pioche[0])
+        fc.piochevide()
+        fc.choixJoueur()
+        if fc.choixJoueur == "D" or fc.choixJoueur == "d":
+            fc.defausser(1)
+        if fc.choixJoueur == "P" or fc.choixJoueur == "p":
+            fc.cartePiochee()
+            choixPJ1 = input("Voulez-vous l'échanger (E) ou la défausser (D) ? : ").lower
+            if choixPJ1 == "e":
+                fc.J1PiocherEchanger()
+            elif choixPJ1 == "d":
+                fc.defausser(fc.pioche[0])
                 '''Actions des différentes cartes'''
-                del pioche[0]
-
-        if choixJoueur == "E" or choixJoueur == "e":
+                del fc.pioche[0]
+        if  fc.choixJoueur == "e":
             carteAEchanger = input("Quelle carte voulez-vous échanger ? 1, 2, 3, 4, ou 5, 6")
             if carteAEchanger == "1":
                 break
-
-        J1DireBla5t()
-
-        voirMain(1)
-        voirDefausse()
-
-""
+        fc.direbla5t()
+        fc.voirMain(1)
+        fc.voirdefausse()

@@ -1,6 +1,5 @@
 import fonctions as fc
 import random
-from fonctions import joueurs
 condFinPartie = False
 
 while not condFinPartie: #Boucle de Partie
@@ -26,8 +25,8 @@ while not condFinPartie: #Boucle de Partie
             if choixPJ1 == "e":
                 fc.J1PiocherEchanger()
             elif choixPJ1 == "d":
-                fc.defausser(fc.pioche[0])
-                '''Actions des différentes cartes'''
+                fc.defausser(fc.pioche[0])#Actions des différentes cartes
+
                 del fc.pioche[0]
         if  fc.choixJoueur == "e":
             carteAEchanger = input("Quelle carte voulez-vous échanger ? 1, 2, 3, 4, ou 5, 6")

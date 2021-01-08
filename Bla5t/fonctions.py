@@ -1,3 +1,5 @@
+#By Ghislain Demael
+#Aidé par Maxime Tardieu
 import listeCartes as lc
 import random
 pioche =[]

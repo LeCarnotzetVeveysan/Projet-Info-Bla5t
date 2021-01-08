@@ -1,3 +1,5 @@
+#By Ghislain Demael
+#Aidé par Maxime Tardieu
 import fonctions as fc
 import random
 condFinPartie = False

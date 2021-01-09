@@ -94,7 +94,8 @@ def defausser():
 
 
 def direbla5t():
-    condBlast = input("Voulez-vous dire Bla5t ? (oui/OUI ou non/NON) :")
-    if condBlast == "oui" or condBlast == "OUI":
-        '''Retourner les cartes'''
+    condBlast = input("Voulez-vous dire Bla5t ? (oui/OUI ou non/NON) :").lower
+    if condBlast == "oui" or condBlast == "o":
+        dernierTourJ1 = True
+    elif condBlast == "non" or condBlast == "n":
         dernierTourJ1 = True

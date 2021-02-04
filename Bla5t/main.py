@@ -35,5 +35,5 @@ while not condFinPartie: #Boucle de Partie
             if carteAEchanger == "1":
                 break
         fc.direbla5t()
-        fc.voirMain(1)
+        fc.voirmain(1)
         fc.voirdefausse()

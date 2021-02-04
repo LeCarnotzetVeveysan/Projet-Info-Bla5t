@@ -14,7 +14,7 @@ def piocher(joueur, nbrcartesapiocher):
 
 
 def voirmain(joueur):
-    for i in range(0,len(joueurs[joueur])):
+    for i in range(0,joueurs.find(joueur)):
         print(joueurs[joueurs.find(joueur)][0], joueurs[joueurs.find(joueur)][1]) #jsp ce que tu veux print faudra que tu le change
 
 
